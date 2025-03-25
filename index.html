@@ -130,35 +130,6 @@
         <footer>
             <p>>No copyright - The rights of this form belongs to Liverpool OFA<p>
         </footer>
-        <script>
-            // When the form is submitted
-            document.getElementById('surveyForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent the default redirection
-
-                // Get the form data
-                const formData = new FormData(this);
-
-                // Google Forms endpoint for POST requests
-                const googleFormsURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdYtPSAH1otuc8sBzDVV0hUGAjRn_pjPyloZg--dWctqFTsMQ/formResponse';
-
-                // Send the form data using Fetch API (AJAX)
-                fetch(googleFormsURL, {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    // Check if the form was successfully submitted
-                    if (response.ok) {
-                        document.getElementById('thankYouMessage').style.display = 'block'; // Show the thank you message
-                        document.getElementById('surveyForm').style.display = 'none'; // Optionally hide the form
-                    } else {
-                        console.error('Form submission failed.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            });
-        </script>
+        
     </body>
 </html>
